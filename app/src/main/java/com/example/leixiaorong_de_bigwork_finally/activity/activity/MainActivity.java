@@ -311,7 +311,7 @@ public class MainActivity extends AppCompatActivity {
             //是否打开
             public void setActiveImage(String active) {
                 if (active.equals("true")) {
-                    mActiveImage.setImageResource(R.drawable.ic_alarm_on_grey_600_24dp);
+                    mActiveImage.setImageResource(R.drawable.ic_alarm_on_blue);
                 } else if (active.equals("false")) {
                     mActiveImage.setImageResource(R.drawable.ic_alarm_off_grey_600_24dp);
                 }
