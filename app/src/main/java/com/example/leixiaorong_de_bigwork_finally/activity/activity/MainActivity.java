@@ -457,6 +457,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_finish:
                 finish();
                 break;
+            case R.id.action_stopwatch:
+                Intent intent = new Intent(MainActivity.this,StopwatchActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.action_timer:
+                Intent intent1 = new Intent(MainActivity.this,TimerActivity.class);
+                startActivity(intent1);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

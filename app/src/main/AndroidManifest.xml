@@ -17,10 +17,10 @@
         </activity>
         <activity
             android:name=".activity.activity.AddAlarmActivity"
-            android:label="@string/title_activity_add_alarm"></activity>
+            android:label="@string/title_activity_add_alarm" />
         <activity
             android:name=".activity.activity.EditAlarmActivity"
-            android:label="@string/title_activity_edit_alarm"></activity>
+            android:label="@string/title_activity_edit_alarm" />
 
         <receiver android:name=".activity.MyAlarmReceiver" />
         <receiver android:name=".activity.SnoozeReceiver" />
@@ -38,7 +38,9 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.activity.OtherActivity"></activity>
+        <activity android:name=".activity.activity.OtherActivity" />
+        <activity android:name=".activity.activity.StopwatchActivity" />
+        <activity android:name=".activity.activity.TimerActivity"></activity>
     </application>
 
 </manifest>
