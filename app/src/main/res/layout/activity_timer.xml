@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TimePicker
+        android:id="@+id/timePic1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/buttone1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePic1"
+        android:background="@color/primary"
+        android:text="开始计时" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_hour_decade"
+            style="@style/RushBuyCountDownTimerViewStyle" />
+
+        <TextView
+            android:id="@+id/tv_hour_unit"
+            style="@style/RushBuyCountDownTimerViewStyle"
+            android:layout_marginLeft="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="#4F4242"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_min_decade"
+            style="@style/RushBuyCountDownTimerViewStyle" />
+
+        <TextView
+            android:id="@+id/tv_min_unit"
+            style="@style/RushBuyCountDownTimerViewStyle"
+            android:layout_marginLeft="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:text=":"
+            android:textColor="#4F4242"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_sec_decade"
+            style="@style/RushBuyCountDownTimerViewStyle" />
+
+        <TextView
+            android:id="@+id/tv_sec_unit"
+            style="@style/RushBuyCountDownTimerViewStyle"
+            android:layout_marginLeft="1dp" />
+    </LinearLayout>
+</LinearLayout>
