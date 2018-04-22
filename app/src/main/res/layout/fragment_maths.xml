@@ -63,7 +63,7 @@
         android:layout_marginTop="27dp"
         android:text=" 59 - 56 = ? "
         android:textColor="@color/background_alarm_white"
-        android:textSize="25sp" />
+        android:textSize="50sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -72,6 +72,7 @@
             android:id="@+id/et_maths_answer"
             android:layout_width="120dp"
             android:layout_height="45dp"
+            android:numeric="integer"
             android:hint="the answer"/>
         <Button
             android:id="@+id/btn_maths_confirm"

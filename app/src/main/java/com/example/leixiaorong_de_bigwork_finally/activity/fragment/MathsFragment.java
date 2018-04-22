@@ -1,5 +1,7 @@
 package com.example.leixiaorong_de_bigwork_finally.activity.fragment;
 
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.leixiaorong_de_bigwork_finally.R;
 import com.example.leixiaorong_de_bigwork_finally.activity.Model.AlarmModel;
@@ -37,6 +40,8 @@ public class MathsFragment extends Fragment {
     private EditText answerET; //回答的答案
     private String problem; //随机生成的问题
     private int answer;  //随机问题的答案
+
+    private MediaPlayer sound;  //失败音效
 
     @Nullable
     @Override
@@ -82,7 +87,12 @@ public class MathsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(isTrue()){
+                    playSoundTrue();
                     getActivity().finish();
+                }
+                else{
+                    playSoundFail();
+                    Toast.makeText(getContext(), "回答错误（￣︶￣）↗　", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -105,12 +115,14 @@ public class MathsFragment extends Fragment {
             case 1:
                 mathsTV.append(" - ");
                 answer = randomInt1 - randomInt2;
+                break;
             case 2:
                 mathsTV.append(" × ");
                 answer = randomInt1 * randomInt2;
                 break;
             default:
                 mathsTV.append(" + ");
+                break;
         }
         mathsTV.append(String.valueOf(randomInt2));
         mathsTV.append(" = ?");
@@ -121,5 +133,14 @@ public class MathsFragment extends Fragment {
             return true;
         else
             return false;
+    }
+
+    private void playSoundFail(){
+        sound = MediaPlayer.create(getContext(), R.raw.fail);
+        sound.start();
+    }
+    private void playSoundTrue(){
+        sound = MediaPlayer.create(getContext(), R.raw.bingo);
+        sound.start();
     }
 }
