@@ -4,9 +4,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -39,6 +39,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
+
 /*
 主界面，主要展示了闹钟的详细数据 ，包含一些简单的操作
  */
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MyReAdapter();
         adapter.setItemCount();
         mRecyclerView.setAdapter(adapter);
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
 
         setSupportActionBar(mToolBar);
         mToolBar.setTitle(R.string.app_name);
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     class MyReAdapter extends RecyclerView.Adapter<MyReAdapter.MyViewHolder> {
-        private ArrayList<AlarmItem> mItems;
+        private List<AlarmItem> mItems;
         public MyReAdapter() {
             mItems = new ArrayList<>();
         }
@@ -198,12 +199,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "已删除闹钟", Toast.LENGTH_SHORT).show();
 
 
-                    //这里会闪退
                     List<AlarmModel> alarmModels = db.getAllAlarms();
                     if (alarmModels.isEmpty()) {
                         mNoAlarmTextView.setVisibility(View.VISIBLE);
                     } else {
-                        mNoAlarmTextView.setVisibility(View.INVISIBLE);
+//                        mNoAlarmTextView.setVisibility(View.INVISIBLE);
+                        mNoAlarmTextView.setVisibility(View.GONE);
                     }
 
                 }

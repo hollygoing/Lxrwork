@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -212,7 +212,7 @@ public class EditAlarmActivity extends AppCompatActivity implements TimePickerDi
     }
 
     public void selectWake(View v){
-        final String[] items = {"常规","其他方式（待开发0.0）"};
+        final String[] items = {"常规","数学题"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("停止方式");
         builder.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
@@ -222,11 +222,11 @@ public class EditAlarmActivity extends AppCompatActivity implements TimePickerDi
                 mWake = items[which];
                 mWakeText.setText( mWake);
 
-                if (which == 1){
-                    Intent i = new Intent(EditAlarmActivity.this, OtherActivity.class);
-                    i.putExtra(ALARM_ID, Integer.toString(mAlarmID));
-                    startActivity(i);
-                }
+//                if (which == 1){
+//                    Intent i = new Intent(EditAlarmActivity.this, OtherActivity.class);
+//                    i.putExtra(ALARM_ID, Integer.toString(mAlarmID));
+//                    startActivity(i);
+//                }
 
                 dialog.dismiss();
             }
@@ -369,7 +369,7 @@ public class EditAlarmActivity extends AppCompatActivity implements TimePickerDi
                     player.release();
                     player = MediaPlayer.create(this, R.raw.ring01);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring01);
+                    player = MediaPlayer.create(this, R.raw.ring01);
 
                 }
                 break;
@@ -377,9 +377,9 @@ public class EditAlarmActivity extends AppCompatActivity implements TimePickerDi
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring02);
+                    player = MediaPlayer.create(this, R.raw.ring02);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring02);
+                    player = MediaPlayer.create(this, R.raw.ring02);
 
                 }
                 break;
@@ -387,9 +387,9 @@ public class EditAlarmActivity extends AppCompatActivity implements TimePickerDi
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring03);
+                    player = MediaPlayer.create(this, R.raw.ring03);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring03);
+                    player = MediaPlayer.create(this, R.raw.ring03);
 
                 }
                 break;
@@ -397,9 +397,9 @@ public class EditAlarmActivity extends AppCompatActivity implements TimePickerDi
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring04);
+                    player = MediaPlayer.create(this, R.raw.ring04);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring04);
+                    player = MediaPlayer.create(this, R.raw.ring04);
 
                 }
                 break;
@@ -407,9 +407,9 @@ public class EditAlarmActivity extends AppCompatActivity implements TimePickerDi
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring05);
+                    player = MediaPlayer.create(this, R.raw.ring05);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring05);
+                    player = MediaPlayer.create(this, R.raw.ring05);
 
                 }
                 break;
@@ -419,7 +419,7 @@ public class EditAlarmActivity extends AppCompatActivity implements TimePickerDi
                     player.release();
                     player = MediaPlayer.create(this, R.raw.ring06);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring06);
+                    player = MediaPlayer.create(this, R.raw.ring06);
 
                 }
                 break;

@@ -44,6 +44,7 @@ public class NormalFragment extends Fragment {
         minuteText = (TextView) view.findViewById(R.id.time_minute_text);
         activity = (PlayAlarmActivity) getActivity();
 
+
         MyAlarmDataBase db = new MyAlarmDataBase(getActivity());
         AlarmModel alarm = db.getAlarm(activity.getmId());
 

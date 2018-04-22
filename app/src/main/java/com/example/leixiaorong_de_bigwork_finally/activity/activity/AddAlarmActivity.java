@@ -1,16 +1,15 @@
 package com.example.leixiaorong_de_bigwork_finally.activity.activity;
 
-import android.app.TimePickerDialog;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -212,7 +211,7 @@ public class AddAlarmActivity extends AppCompatActivity implements com.wdullaer.
     //选择停止方式
 
     public void selectWake(View v){
-        final String[] items = {"常规","其他方式（待开发0.0）"};
+        final String[] items = {"常规","数学题"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("停止方式");
         builder.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
@@ -222,11 +221,11 @@ public class AddAlarmActivity extends AppCompatActivity implements com.wdullaer.
                 mWake = items[which];
                 mWakeText.setText(mWake);
 
-                if (which == 1) {
-                    Intent i = new Intent(AddAlarmActivity.this, OtherActivity.class);
-                    i.putExtra(EditAlarmActivity.ALARM_ID, Integer.toString(ID));
-                    startActivity(i);
-                }
+//                if (which == 1 || which == 2) {
+//                    Intent i = new Intent(AddAlarmActivity.this, OtherActivity.class);
+//                    i.putExtra(EditAlarmActivity.ALARM_ID, Integer.toString(ID));
+//                    startActivity(i);
+//                }
 
                 dialog.dismiss();
             }
@@ -301,9 +300,9 @@ public class AddAlarmActivity extends AppCompatActivity implements com.wdullaer.
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring01);
+                    player = MediaPlayer.create(this, R.raw.ring01);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring01);
+                    player = MediaPlayer.create(this, R.raw.ring01);
 
                 }
                 break;
@@ -311,9 +310,9 @@ public class AddAlarmActivity extends AppCompatActivity implements com.wdullaer.
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring02);
+                    player = MediaPlayer.create(this, R.raw.ring02);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring02);
+                    player = MediaPlayer.create(this, R.raw.ring02);
 
                 }
                 break;
@@ -321,9 +320,9 @@ public class AddAlarmActivity extends AppCompatActivity implements com.wdullaer.
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring03);
+                    player = MediaPlayer.create(this, R.raw.ring03);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring03);
+                    player = MediaPlayer.create(this, R.raw.ring03);
 
                 }
                 break;
@@ -331,9 +330,9 @@ public class AddAlarmActivity extends AppCompatActivity implements com.wdullaer.
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring04);
+                    player = MediaPlayer.create(this, R.raw.ring04);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring04);
+                    player = MediaPlayer.create(this, R.raw.ring04);
 
                 }
                 break;
@@ -341,9 +340,9 @@ public class AddAlarmActivity extends AppCompatActivity implements com.wdullaer.
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring05);
+                    player = MediaPlayer.create(this, R.raw.ring05);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring05);
+                    player = MediaPlayer.create(this, R.raw.ring05);
 
                 }
                 break;
@@ -351,9 +350,9 @@ public class AddAlarmActivity extends AppCompatActivity implements com.wdullaer.
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring06);
+                    player = MediaPlayer.create(this, R.raw.ring06);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring06);
+                    player = MediaPlayer.create(this, R.raw.ring06);
 
                 }
                 break;

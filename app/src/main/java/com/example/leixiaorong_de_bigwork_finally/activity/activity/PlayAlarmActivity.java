@@ -1,19 +1,20 @@
 package com.example.leixiaorong_de_bigwork_finally.activity.activity;
-import android.app.Activity;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.example.leixiaorong_de_bigwork_finally.R;
 import com.example.leixiaorong_de_bigwork_finally.activity.Model.AlarmModel;
-import com.example.leixiaorong_de_bigwork_finally.activity.data.MyAlarmDataBase;
-import com.example.leixiaorong_de_bigwork_finally.activity.fragment.NormalFragment;
 import com.example.leixiaorong_de_bigwork_finally.activity.Utils.ActivityManager;
+import com.example.leixiaorong_de_bigwork_finally.activity.data.MyAlarmDataBase;
+import com.example.leixiaorong_de_bigwork_finally.activity.fragment.MathsFragment;
+import com.example.leixiaorong_de_bigwork_finally.activity.fragment.NormalFragment;
 
 public class PlayAlarmActivity extends AppCompatActivity {
     public static final String ALARM_ID = "id";
@@ -21,6 +22,7 @@ public class PlayAlarmActivity extends AppCompatActivity {
     private Vibrator vibrator;
     private String mWake;
     private NormalFragment normalFragment;
+    private MathsFragment mathFragment;
     private int mId;
     private String mRing;
     private MediaPlayer player;
@@ -47,6 +49,7 @@ public class PlayAlarmActivity extends AppCompatActivity {
         mWake = am.getWakeType();
         mRing = am.getRing();
         normalFragment = new NormalFragment();
+        mathFragment = new MathsFragment();
 
         if (mWake.equals("常规")){
             initFragment(0);
@@ -68,12 +71,12 @@ public class PlayAlarmActivity extends AppCompatActivity {
             SharedPreferences pf = getSharedPreferences("ringCode",MODE_PRIVATE);
             int ringCode  = pf.getInt("key_ring",1);
             startRing(ringCode);
-            startVibrate();
+            startVibrate();  //震动
         }
 
     }
 
-    private void startRing(int ringCode) {
+    private void startRing(int ringCode) {  //停止闹钟方式
         switch (ringCode){
             case 1:
                 if (player!=null && player.isPlaying()){
@@ -81,7 +84,7 @@ public class PlayAlarmActivity extends AppCompatActivity {
                     player.release();
                     player = MediaPlayer.create(this, R.raw.ring01);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring01);
+                    player = MediaPlayer.create(this, R.raw.ring01);
 
                 }
                 break;
@@ -89,9 +92,9 @@ public class PlayAlarmActivity extends AppCompatActivity {
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring02);
+                    player = MediaPlayer.create(this, R.raw.ring02);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring02);
+                    player = MediaPlayer.create(this, R.raw.ring02);
 
                 }
                 break;
@@ -99,9 +102,9 @@ public class PlayAlarmActivity extends AppCompatActivity {
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring03);
+                    player = MediaPlayer.create(this, R.raw.ring03);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring03);
+                    player = MediaPlayer.create(this, R.raw.ring03);
 
                 }
                 break;
@@ -109,9 +112,9 @@ public class PlayAlarmActivity extends AppCompatActivity {
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring04);
+                    player = MediaPlayer.create(this, R.raw.ring04);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring04);
+                    player = MediaPlayer.create(this, R.raw.ring04);
 
                 }
                 break;
@@ -119,9 +122,9 @@ public class PlayAlarmActivity extends AppCompatActivity {
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring05);
+                    player = MediaPlayer.create(this, R.raw.ring05);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring05);
+                    player = MediaPlayer.create(this, R.raw.ring05);
 
                 }
                 break;
@@ -129,9 +132,9 @@ public class PlayAlarmActivity extends AppCompatActivity {
                 if (player!=null && player.isPlaying()){
                     player.stop();
                     player.release();
-                    player = MediaPlayer.create(this,R.raw.ring06);
+                    player = MediaPlayer.create(this, R.raw.ring06);
                 }else {
-                    player = MediaPlayer.create(this,R.raw.ring06);
+                    player = MediaPlayer.create(this, R.raw.ring06);
 
                 }
                 break;
@@ -148,7 +151,7 @@ public class PlayAlarmActivity extends AppCompatActivity {
         });
     }
 
-    private void startVibrate() {
+    private void startVibrate() {     //震动
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         long[] pattern = {1000,5000,1000,5000};
         vibrator.vibrate(pattern, 0);
@@ -165,8 +168,8 @@ public class PlayAlarmActivity extends AppCompatActivity {
                 transaction.show(normalFragment);
                 break;
             case 1:
-                transaction.add(R.id.frag_content,normalFragment);
-                transaction.show(normalFragment);
+                transaction.add(R.id.frag_content,mathFragment);
+                transaction.show(mathFragment);
                 break;
 
 
@@ -178,6 +181,10 @@ public class PlayAlarmActivity extends AppCompatActivity {
     private void hideFragment(android.support.v4.app.FragmentTransaction transaction) {
         if (normalFragment != null){
             transaction.hide(normalFragment);
+        }
+
+        if (mathFragment != null){
+            transaction.hide(mathFragment);
         }
         /*if (questionFragment != null){
             transaction.hide(questionFragment);
