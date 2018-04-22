@@ -20,7 +20,7 @@
         android:layout_below="@+id/toolbar"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:id="@+id/add_reminder_layout_top"
-        android:background="@color/primary"
+        android:background="@drawable/shape_gradient"
         android:orientation="vertical"
         android:layout_height="148dp">
 
@@ -74,8 +74,8 @@
 
                 <ImageView
                     android:id="@+id/time_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="45dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="32dp"
@@ -91,7 +91,7 @@
 
                     <TextView
                         android:id="@+id/time_text"
-                        android:textColor="@color/primary"
+                        android:textColor="#a2b6d3"
                         android:layout_width="wrap_content"
                         android:textSize="16sp"
                         android:layout_height="wrap_content"
@@ -119,8 +119,8 @@
 
                 <ImageView
                     android:id="@+id/repeat_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="45dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="32dp"
                     android:src="@drawable/xunhuan"
@@ -136,7 +136,7 @@
 
                     <TextView
                         android:id="@+id/repeat_text"
-                        android:textColor="@color/primary"
+                        android:textColor="#a2b6d3"
                         android:layout_width="wrap_content"
                         android:textSize="16sp"
                         android:layout_height="wrap_content"
@@ -165,8 +165,8 @@
 
                 <ImageView
                     android:id="@+id/wake_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="45dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="32dp"
                     android:src="@drawable/tingzhi"
@@ -181,7 +181,7 @@
 
                     <TextView
                         android:id="@+id/wake_text"
-                        android:textColor="@color/primary"
+                        android:textColor="#a2b6d3"
                         android:layout_width="wrap_content"
                         android:textSize="16sp"
                         android:layout_height="wrap_content"
@@ -209,8 +209,8 @@
 
                 <ImageView
                     android:id="@+id/holdSleep_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="45dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="32dp"
@@ -226,7 +226,7 @@
 
                     <TextView
                         android:id="@+id/holdSleep_text"
-                        android:textColor="@color/primary"
+                        android:textColor="#a2b6d3"
                         android:layout_width="wrap_content"
                         android:textSize="16sp"
                         android:layout_height="wrap_content"

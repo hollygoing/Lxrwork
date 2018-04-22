@@ -17,6 +17,7 @@ public class StopwatchActivity extends AppCompatActivity implements View.OnClick
 
     private Chronometer chronometer;
     private Button btn_start,btn_stop,btn_base;
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,13 @@ public class StopwatchActivity extends AppCompatActivity implements View.OnClick
         btn_start = (Button) findViewById(R.id.btnStart);
         btn_stop = (Button) findViewById(R.id.btnStop);
         btn_base = (Button) findViewById(R.id.btnReset);
+        backButton = findViewById(R.id.btn_stopwatch_back);
 
         chronometer.setOnChronometerTickListener(this);
         btn_start.setOnClickListener(this);
         btn_stop.setOnClickListener(this);
         btn_base.setOnClickListener(this);
-
+        backButton.setOnClickListener(this);
     }
 
     @Override
@@ -49,6 +51,9 @@ public class StopwatchActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.btnReset:
                 chronometer.setBase(SystemClock.elapsedRealtime());// 复位
+                break;
+            case R.id.btn_stopwatch_back:
+                finish();
                 break;
         }
     }

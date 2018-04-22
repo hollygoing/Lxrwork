@@ -2,52 +2,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
     android:orientation="vertical"
+    android:background="@drawable/shape_gradient"
     tools:context=".activity.activity.StopwatchActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="105dp">
 
-
-    <Chronometer
-        android:id="@+id/chronometer"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="#ff0000"
-        android:textSize="60dip" />
-
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:background="@color/primary">
+
+        <Button
+            android:id="@+id/btn_stopwatch_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:text="计时器"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dip"
-        android:orientation="horizontal">
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:background="@drawable/stopwatch"/>
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="70dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="60dip" />
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btnStart"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/primary"
-            android:text="开始计时" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_start" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btnStop"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/primary"
-            android:text="停止计时" />
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/ic_pause"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btnReset"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/primary"
-            android:text="重置" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_stop" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
 
     </LinearLayout>
-
 </LinearLayout>
 

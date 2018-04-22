@@ -27,6 +27,7 @@ import com.example.leixiaorong_de_bigwork_finally.activity.AlarmService;
 import com.example.leixiaorong_de_bigwork_finally.activity.Model.AlarmModel;
 import com.example.leixiaorong_de_bigwork_finally.activity.Utils.ActivityManager;
 import com.example.leixiaorong_de_bigwork_finally.activity.Utils.DividerItemDecoration;
+import com.example.leixiaorong_de_bigwork_finally.activity.Utils.MyColorGenerator;
 import com.example.leixiaorong_de_bigwork_finally.activity.Utils.MyTimeSorter;
 import com.example.leixiaorong_de_bigwork_finally.activity.data.MyAlarmDataBase;
 import com.getbase.floatingactionbutton.FloatingActionButton;
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MyReAdapter();
         adapter.setItemCount();
         mRecyclerView.setAdapter(adapter);
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+//        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
 
         setSupportActionBar(mToolBar);
         mToolBar.setTitle(R.string.app_name);
@@ -220,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
 
             private TextView mTitleText, mTimeText, mRepeatText;
             private ImageView mActiveImage, mThumbnailImage, mOverFlowImage;
-            private ColorGenerator mColorGenerator = ColorGenerator.DEFAULT;
+            private MyColorGenerator mColorGenerator = MyColorGenerator.DEFAULT;
             private TextDrawable mDrawableBuilder;
             private int itemPosition;
 
@@ -287,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
             //给闹钟取名字
             public void setAlarmTitle(String title) {
                 mTitleText.setText(title);
-                String letter = "a";
+                String letter = "默认";
                 if (title != null && !title.isEmpty()) {
                     letter = title.substring(0, 1);
                 }
