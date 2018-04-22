@@ -50,6 +50,7 @@ public class NormalFragment extends Fragment {
         Log.d("id " , String.valueOf(activity.getmId()));
         alarmTittle.setText(alarm.getTitle() + "时间到");
 
+
         Calendar calendar = Calendar.getInstance();
         String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
         String  minute = null;
