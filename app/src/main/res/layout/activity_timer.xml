@@ -3,23 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:background="@color/primary">
+
+        <Button
+            android:id="@+id/btn_timer_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:text="定时器"/>
+    </LinearLayout>
 
     <TimePicker
         android:id="@+id/timePic1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:numbersBackgroundColor="#a2b6d3"
         />
-
-    <Button
-        android:id="@+id/buttone1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/timePic1"
-        android:background="@color/primary"
-        android:text="开始计时" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,12 +42,14 @@
 
         <TextView
             android:id="@+id/tv_hour_decade"
-            style="@style/RushBuyCountDownTimerViewStyle" />
+            style="@style/RushBuyCountDownTimerViewStyle"
+            android:fontFamily="sans-serif-thin"/>
 
         <TextView
             android:id="@+id/tv_hour_unit"
             style="@style/RushBuyCountDownTimerViewStyle"
-            android:layout_marginLeft="1dp" />
+            android:layout_marginLeft="1dp"
+            android:fontFamily="sans-serif-thin"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,16 +58,19 @@
             android:gravity="center"
             android:text=":"
             android:textColor="#4F4242"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-thin"/>
 
         <TextView
             android:id="@+id/tv_min_decade"
-            style="@style/RushBuyCountDownTimerViewStyle" />
+            style="@style/RushBuyCountDownTimerViewStyle"
+            android:fontFamily="sans-serif-thin"/>
 
         <TextView
             android:id="@+id/tv_min_unit"
             style="@style/RushBuyCountDownTimerViewStyle"
-            android:layout_marginLeft="1dp" />
+            android:layout_marginLeft="1dp"
+            android:fontFamily="sans-serif-thin"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,15 +79,27 @@
             android:gravity="center"
             android:text=":"
             android:textColor="#4F4242"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-thin"/>
 
         <TextView
             android:id="@+id/tv_sec_decade"
-            style="@style/RushBuyCountDownTimerViewStyle" />
+            style="@style/RushBuyCountDownTimerViewStyle"
+            android:fontFamily="sans-serif-thin"/>
 
         <TextView
             android:id="@+id/tv_sec_unit"
             style="@style/RushBuyCountDownTimerViewStyle"
+            android:fontFamily="sans-serif-thin"
             android:layout_marginLeft="1dp" />
     </LinearLayout>
+    <Button
+        android:id="@+id/buttone1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePic1"
+        android:background="#a2b6d3"
+        android:text="开始计时" />
+
+
 </LinearLayout>

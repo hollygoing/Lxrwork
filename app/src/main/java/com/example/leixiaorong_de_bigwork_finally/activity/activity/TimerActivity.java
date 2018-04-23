@@ -24,6 +24,7 @@ public class TimerActivity extends AppCompatActivity {
     private TimePicker timePick1;
     private Button buttone1;
     private TextView h1,h2,m1,m2,s1,s2;
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class TimerActivity extends AppCompatActivity {
         m2 = (TextView)findViewById(R.id.tv_min_unit);
         s1 = (TextView)findViewById(R.id.tv_sec_decade);
         s2 = (TextView)findViewById(R.id.tv_sec_unit);
+        backButton = findViewById(R.id.btn_timer_back);
 
         buttone1=(Button)findViewById(R.id.buttone1);
         OnChangeListener  buc=new OnChangeListener();
@@ -45,11 +47,16 @@ public class TimerActivity extends AppCompatActivity {
         timePick1.setIs24HourView(true);
         TimeListener times=new TimeListener();
         timePick1.setOnTimeChangedListener(times);
+        backButton.setOnClickListener(buc);
     }
 
     class OnChangeListener implements OnClickListener{
         @Override
         public void onClick(View v) {
+            if(v.getId() == R.id.btn_timer_back){
+                finish();
+            }
+
             // TODO Auto-generated method stub
             int h=timePick1.getCurrentHour();
             int m=timePick1.getCurrentMinute();
