@@ -31,13 +31,13 @@
             android:fontFamily="sans-serif-thin"
             android:textSize="30sp"
             android:text="15.00"
-            android:textColor="#9f9ada"
+            android:textColor="@color/primary_blue"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="match_parent"
             android:layout_below="@id/re_time"
             android:gravity="bottom">
 
@@ -47,7 +47,7 @@
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:layout_height="wrap_content"
-                android:textColor="#9f9ada"
+                android:textColor="@color/primary_blue"
                 android:textSize="14sp"
                 android:text="名字"/>
 
@@ -58,7 +58,7 @@
                 android:maxLines="2"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:textColor="#9f9ada"
+                android:textColor="@color/primary_blue"
                 android:textSize="14sp"
                 android:text="每天"/>
 
@@ -78,17 +78,14 @@
                 android:layout_alignParentRight="true"
                 android:visibility="invisible"/>
 
-
-
         </LinearLayout>
     </RelativeLayout>
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:clickable="true"
-        android:src="@drawable/ic_alarm_on_blue"
-        android:id="@+id/active_image"
-        android:layout_marginRight="10dp" />
-
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:src="@drawable/ic_alarm_on_blue"
+            android:id="@+id/active_image"
+            android:layout_marginRight="10dp" />
 </LinearLayout>

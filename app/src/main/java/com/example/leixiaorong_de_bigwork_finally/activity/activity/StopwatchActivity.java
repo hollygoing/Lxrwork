@@ -18,6 +18,7 @@ public class StopwatchActivity extends AppCompatActivity implements View.OnClick
     private Chronometer chronometer;
     private Button btn_start,btn_stop,btn_base;
     private Button backButton;
+    private boolean isFrist = true;//判断是否为第一次计时
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,10 @@ public class StopwatchActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnStart:
+                if(isFrist){
+                    chronometer.setBase(SystemClock.elapsedRealtime());// 复位
+                    isFrist = false;
+                }
                 chronometer.start();// 开始计时
                 break;
             case R.id.btnStop:
@@ -51,6 +56,7 @@ public class StopwatchActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.btnReset:
                 chronometer.setBase(SystemClock.elapsedRealtime());// 复位
+                chronometer.stop();// 停止计时
                 break;
             case R.id.btn_stopwatch_back:
                 finish();
